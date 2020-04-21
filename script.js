@@ -104,7 +104,7 @@ function calculateCashRatio() {
   const currentLiabilities = Number(document.getElementById('current-liabilities').value);
 
   let cR = (cash / currentLiabilities).toFixed(2);
-  let c = (cashRatio * currentLiabilitie).toFixed(2);
+  let c = (cashRatio * currentLiabilities).toFixed(2);
   let cL = (cash / cashRatio).toFixed(2);
 
   if(cashRatio === 0 && cash !== 0 && currentLiabilities !== 0) {
