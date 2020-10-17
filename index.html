@@ -1,150 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="container-one">
-    <h1 class="heading-h1">Accounting and Finance Equations</h1>
-    <div class="equations">
-      <!--- Overall Value HTML -->
-      <div class="form-overall-value">
-        <h1>Overall Value</h1>
-        <h3>Please Enter Two Values</h3>
-        <small>Total Assets(TA) = Liabilities(L) + Equity(E)</small><br>
-        <div id="form" class="form">
-          <label for="total-assets" class="label">Total Assets:</label>
-          <input type="text" id="total-assets">
-          <label for="liabilities" class="label">Liabilities:</label>
-          <input type="text" id="liabilities">
-          <label for="equity" class="label">Equity:</label>
-          <input type="text" id="equity">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateOverallValue()"><br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>This is the Finance App</title>
+  </head>
+  <body>
+    <div class="container-one">
+      <h1 class="heading-h1">Accounting and Finance Equations</h1>
+      <div class="equations">
+        <!--- Overall Value HTML -->
+        <div class="form-overall-value">
+          <h1>Overall Value</h1>
+          <h3>Please Enter Two Values</h3>
+          <small>Total Assets(TA) = Liabilities(L) + Equity(E)</small><br />
+          <div id="form" class="form">
+            <label for="total-assets" class="label">Total Assets:</label>
+            <input type="text" id="total-assets" />
+            <label for="liabilities" class="label">Liabilities:</label>
+            <input type="text" id="liabilities" />
+            <label for="equity" class="label">Equity:</label>
+            <input type="text" id="equity" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateOverallValue()"
+            /><br />
+          </div>
+          <div id="result-one" class="result-one"></div>
         </div>
-        <div id="result-one" class="result-one"></div>
-      </div>
-      <!--- Net Income HTML -->
-      <div class="form-net-income">
-        <h1>Net Income</h1>
-        <h3>Please Enter Two Values</h3>
-        <small>Net Income(NI) = Revenue(R) - Expenses(E)</small><br>
-        <div id="form" class="form">
-          <label for="net-income" class="label">Net Income:</label>
-          <input type="text" id="net-income">
-          <label for="revenue" class="label">Revenue:</label>
-          <input type="text" id="revenue">
-          <label for="expense" class="label">Expenses:</label>
-          <input type="text" id="expense">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateNetIncome()"><br>
+        <!--- Net Income HTML -->
+        <div class="form-net-income">
+          <h1>Net Income</h1>
+          <h3>Please Enter Two Values</h3>
+          <small>Net Income(NI) = Revenue(R) - Expenses(E)</small><br />
+          <div id="form" class="form">
+            <label for="net-income" class="label">Net Income:</label>
+            <input type="text" id="net-income" />
+            <label for="revenue" class="label">Revenue:</label>
+            <input type="text" id="revenue" />
+            <label for="expense" class="label">Expenses:</label>
+            <input type="text" id="expense" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateNetIncome()"
+            /><br />
+          </div>
+          <div id="result-two" class="result-two"></div>
         </div>
-        <div id="result-two" class="result-two"></div>
-      </div>
-      <!--- Cash Ratio HTML -->
-      <div class="form-cash-ratio">
-        <h1>Cash Ratio</h1>
-        <h3>Please Enter Two Values</h3>
-        <small>Cash Ratio(CR) = Cash(C) / Current Liabilities(CL)</small><br>
-        <div id="form" class="form">
-          <label for="cash-ratio" class="label">Cash Ratio:</label>
-          <input type="text" id="cash-ratio">
-          <label for="cash" class="label">Cash:</label>
-          <input type="text" id="cash">
-          <label for="current-liabilities" class="label">Current Liabilities:</label>
-          <input type="text" id="current-liabilities">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateCashRatio()"><br>
+        <!--- Cash Ratio HTML -->
+        <div class="form-cash-ratio">
+          <h1>Cash Ratio</h1>
+          <h3>Please Enter Two Values</h3>
+          <small>Cash Ratio(CR) = Cash(C) / Current Liabilities(CL)</small
+          ><br />
+          <div id="form" class="form">
+            <label for="cash-ratio" class="label">Cash Ratio:</label>
+            <input type="text" id="cash-ratio" />
+            <label for="cash" class="label">Cash:</label>
+            <input type="text" id="cash" />
+            <label for="current-liabilities" class="label"
+              >Current Liabilities:</label
+            >
+            <input type="text" id="current-liabilities" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateCashRatio()"
+            /><br />
+          </div>
+          <div id="result-three" class="result-three"></div>
         </div>
-        <div id="result-three" class="result-three"></div>
-      </div>
-      <!--- Profit Margin HTML -->
-      <div class="form-profit-margin">
-        <h1>Profit Margin</h1>
-        <h3>Please Enter Two Values</h3>
-        <small>Profit Margin(PM) = Net Income(NI) / Sales(S)</small><br>
-        <div id="form" class="form">
-          <label for="profit-margin" class="label">Profit Margin:</label>
-          <input type="text" id="profit-margin">
-          <label for="net-income" class="label">Net Income:</label>
-          <input type="text" id="net-income-two">
-          <label for="sales" class="label">Sales:</label>
-          <input type="text" id="sales">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateProfitMargin()"><br>
+        <!--- Profit Margin HTML -->
+        <div class="form-profit-margin">
+          <h1>Profit Margin</h1>
+          <h3>Please Enter Two Values</h3>
+          <small>Profit Margin(PM) = Net Income(NI) / Sales(S)</small><br />
+          <div id="form" class="form">
+            <label for="profit-margin" class="label">Profit Margin:</label>
+            <input type="text" id="profit-margin" />
+            <label for="net-income" class="label">Net Income:</label>
+            <input type="text" id="net-income-two" />
+            <label for="sales" class="label">Sales:</label>
+            <input type="text" id="sales" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateProfitMargin()"
+            /><br />
+          </div>
+          <div id="result-four" class="result-four"></div>
         </div>
-        <div id="result-four" class="result-four"></div>
-      </div>
-      <!--- Debt-To-Equity Ratio HTML -->
-      <div class="form-debt-to-equity-ratio">
-        <h1>Debt/Equity Ratio</h1>
-        <h3>Please Enter Two Values</h3>
-        <small>Debt/Equity Ratio(DER) = Total Liabilities(TL) /</small><br>
-        <small>Total Equity(TE)</small><br>
-        <div id="form" class="form">
-          <label for="debt-equity" class="label">Debt/Equity:</label>
-          <input type="text" id="debt-equity">
-          <label for="total-liabilities" class="label">Total Liabilities:</label>
-          <input type="text" id="total-liabilities">
-          <label for="total-equity" class="label">Total Equity:</label>
-          <input type="text" id="total-equity">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateDebtEquityRatio()"><br>
+        <!--- Debt-To-Equity Ratio HTML -->
+        <div class="form-debt-to-equity-ratio">
+          <h1>Debt/Equity Ratio</h1>
+          <h3>Please Enter Two Values</h3>
+          <small>Debt/Equity Ratio(DER) = Total Liabilities(TL) /</small><br />
+          <small>Total Equity(TE)</small><br />
+          <div id="form" class="form">
+            <label for="debt-equity" class="label">Debt/Equity:</label>
+            <input type="text" id="debt-equity" />
+            <label for="total-liabilities" class="label"
+              >Total Liabilities:</label
+            >
+            <input type="text" id="total-liabilities" />
+            <label for="total-equity" class="label">Total Equity:</label>
+            <input type="text" id="total-equity" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateDebtEquityRatio()"
+            /><br />
+          </div>
+          <div id="result-five" class="result-five"></div>
         </div>
-        <div id="result-five" class="result-five"></div>
-      </div>
-      <!--- Cost of Goods Sold HTML -->
-      <div class="form-cost-of-goods-sold">
-        <h1>Cost of Goods Sold</h1>
-        <h3>Please Enter Three Values</h3>
-        <small>Cost of Goods Sold(CGS) = </small><br>
-        <small>Beginning Inventory(BI) + </small><br>
-        <small>Cost of Purchasing New Inventory(CPNI) - </small><br>
-        <small>Ending Inventory(EI)</small><br>
-        <div id="form" class="form">
-          <label for="cost-goods-sold" class="label">Cost of Goods Sold:</label>
-          <input type="text" id="cost-goods-sold">
-          <label for="beginning-inventory" class="label">Beginning Inventory:</label>
-          <input type="text" id="beginning-inventory">
-          <label for="cost-purchasing-new-inventory" class="label">Cost of New Inventory:</label>
-          <input type="text" id="cost-purchasing-new-inventory">
-          <label for="ending-inventory" class="label">Ending Inventory:</label>
-          <input type="text" id="ending-inventory">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateCostGoodsSold()"><br>
+        <!--- Cost of Goods Sold HTML -->
+        <div class="form-cost-of-goods-sold">
+          <h1>Cost of Goods Sold</h1>
+          <h3>Please Enter Three Values</h3>
+          <small>Cost of Goods Sold(CGS) = </small><br />
+          <small>Beginning Inventory(BI) + </small><br />
+          <small>Cost of Purchasing New Inventory(CPNI) - </small><br />
+          <small>Ending Inventory(EI)</small><br />
+          <div id="form" class="form">
+            <label for="cost-goods-sold" class="label"
+              >Cost of Goods Sold:</label
+            >
+            <input type="text" id="cost-goods-sold" />
+            <label for="beginning-inventory" class="label"
+              >Beginning Inventory:</label
+            >
+            <input type="text" id="beginning-inventory" />
+            <label for="cost-purchasing-new-inventory" class="label"
+              >Cost of New Inventory:</label
+            >
+            <input type="text" id="cost-purchasing-new-inventory" />
+            <label for="ending-inventory" class="label"
+              >Ending Inventory:</label
+            >
+            <input type="text" id="ending-inventory" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateCostGoodsSold()"
+            /><br />
+          </div>
+          <div id="result-six" class="result-six"></div>
         </div>
-        <div id="result-six" class="result-six"></div>
-      </div>
-      <!--- Retained Earning Equation HTML -->
-      <div class="form-retained-earnings">
-        <h1>Retained Earnings</h1>
-        <h3>Please Enter Three Values</h3>
-        <small>Retained Earning(RE) =  </small><br>
-        <small>Beginning Retained Earnings(BRE) + </small><br>
-        <small>(Net Income or Net Loss)(NINL) - </small><br>
-        <small>Cash Dividends(CD)</small><br>
-        <div id="form" class="form">
-          <label for="retained-earnings" class="label">Retained Earnings:</label>
-          <input type="text" id="retained-earnings">
-          <label for="beginning-retained-earnings" class="label">Beginning Retained Earnings:</label>
-          <input type="text" id="beginning-retained-earnings">
-          <label for="net-income-net-loss" class="label">Net Income or Net Loss:</label>
-          <input type="text" id="net-income-net-loss">
-          <label for="cash-dividends" class="label">Cash Dividends:</label>
-          <input type="text" id="cash-dividends">
-          <br>
-          <input type="button" value="Calculate" id="calculate" class="calculate" onclick="calculateRetainedEarnings()"><br>
+        <!--- Retained Earning Equation HTML -->
+        <div class="form-retained-earnings">
+          <h1>Retained Earnings</h1>
+          <h3>Please Enter Three Values</h3>
+          <small>Retained Earning(RE) = </small><br />
+          <small>Beginning Retained Earnings(BRE) + </small><br />
+          <small>(Net Income or Net Loss)(NINL) - </small><br />
+          <small>Cash Dividends(CD)</small><br />
+          <div id="form" class="form">
+            <label for="retained-earnings" class="label"
+              >Retained Earnings:</label
+            >
+            <input type="text" id="retained-earnings" />
+            <label for="beginning-retained-earnings" class="label"
+              >Beginning Retained Earnings:</label
+            >
+            <input type="text" id="beginning-retained-earnings" />
+            <label for="net-income-net-loss" class="label"
+              >Net Income or Net Loss:</label
+            >
+            <input type="text" id="net-income-net-loss" />
+            <label for="cash-dividends" class="label">Cash Dividends:</label>
+            <input type="text" id="cash-dividends" />
+            <br />
+            <input
+              type="button"
+              value="Calculate"
+              id="calculate"
+              class="calculate"
+              onclick="calculateRetainedEarnings()"
+            /><br />
+          </div>
+          <div id="result-seven" class="result-seven"></div>
         </div>
-        <div id="result-seven" class="result-seven"></div>
       </div>
-
     </div>
-
-  </div>
-  <script type="text/javascript" src="script.js"></script>
-</body>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
